@@ -52,7 +52,7 @@ public class TestNG {
         // Wait for the URL to change to the expected URL
         WebElement login = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\":r0:\"]")));
         login.click();
-        Thread.sleep(50);
+        Thread.sleep(100);
         driver.getCurrentUrl();
         // Check if the URL matches the expected URL after login
         URLValidator.validateURL(driver,"https://dashboard.aqaryint.com/dashboard/default");
