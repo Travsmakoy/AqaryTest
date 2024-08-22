@@ -18,7 +18,6 @@ public class TestNG {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mark\\Downloads\\Seleniu,\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -64,7 +63,6 @@ public class TestNG {
         }
     }
 
-
     @AfterClass
     public void tearDown() throws InterruptedException {
         if (driver != null) {
@@ -77,6 +75,8 @@ public class TestNG {
             String currentURL = driver.getCurrentUrl();
             Assert.assertEquals(currentURL, expectedURL, "The URL is incorrect!");
         }
+
     }
 }
+
 

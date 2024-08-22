@@ -24,25 +24,18 @@
 //    }
 //}
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
-import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
-
-import java.net.MalformedURLException;
-import java.net.URL;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 
 public class Test {
 
@@ -61,16 +54,17 @@ public class Test {
         cap.setCapability("platformName", "Android");
         cap.setCapability("platformVersion", "14");
         cap.setCapability("automationName", "UiAutomator2");
-        cap.setCapability("appPackage", "com.example.aqary");
-        cap.setCapability("appActivity", "com.example.aqary.MainActivity");
+        cap.setCapability("appPackage", "com.aqary.aqary_international");
+        cap.setCapability("appActivity", "com.aqary.aqary_international.MainActivity");
 
         URL url = new URL("http://192.168.1.247:4723");
         driver = new AndroidDriver(url, cap);
+
         System.out.println("APPLICATION OPEN");
     }
 
     public static void testApp() throws MalformedURLException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(951));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(9000));
 //        WebDriverWait waitlonger = new WebDriverWait(driver, Duration.ofSeconds(33));// Wait for up to 10 seconds
         WebElement mark = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//android.view.View[@content-desc='View All'])[1]")));
         mark.click();
@@ -81,7 +75,7 @@ public class Test {
         rentclick.click();
         WebElement enterUser = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ScrollView/android.widget.EditText[1]")));
         enterUser.click();
-        enterUser.sendKeys("mark@admin.com");
+        enterUser.sendKeys("mark");
         WebElement pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ScrollView/android.widget.EditText[2]")));
         pass.click();
         pass.sendKeys("mark");
