@@ -54,9 +54,10 @@ public class dashboard {
 
         // Login
         login("mark@admin.com", "mark");
-
         // Navigate through the menu
+
         clickElement(By.xpath("//*[@id=\"__next\"]/div/nav/div/div/div[2]/ul[2]/button"));
+        clickElement(By.linkText("Units"));
         clickElement(By.xpath("//*[@id=\"__next\"]/div/nav/div/div/div[2]/ul[2]/div[8]/div/div/a/div"));
         clickElement(By.xpath("//*[@id=\"__next\"]/div/main/div/div[2]/div[2]/div/div[2]/div/div/div/div/div[1]/div[3]/div[1]/button"));
         clickElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div/div[2]/div[2]/div/div[1]/button"));
@@ -72,7 +73,7 @@ public class dashboard {
     private void login(String email, String password) {
         enterText(By.name("email"), email);
         enterText(By.name("password"), password);
-        clickElement(By.xpath("//*[@id=\":r0:\"]"));
+        clickElement(By.xpath("//*[@id=\\\":r0:\\\"]"));
     }
 
     private void enterText(By locator, String text) {
