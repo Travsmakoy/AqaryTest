@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeTest;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.testng.annotations.Test;
 
 public class AqaryMobileAppTestLogin {
 
@@ -34,7 +35,7 @@ public class AqaryMobileAppTestLogin {
         cap.setCapability("appPackage", "com.aqary.aqary_international");
         cap.setCapability("appActivity", "com.aqary.aqary_international.MainActivity");
 
-        URL url = new URL("http://192.168.1.247:4723");
+        URL url = new URL("http://localhost:4723");
         driver = new AndroidDriver(url, cap);
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -42,7 +43,7 @@ public class AqaryMobileAppTestLogin {
         System.out.println("APPLICATION OPEN");
     }
 
-    @org.testng.annotations.Test(priority = 1)
+    @Test(priority = 1)
     public void clickViewAll() {
         System.out.println("Clicking 'View All' on Home Screen");
         boolean clicked = clickElement(By.xpath("(//android.view.View[@content-desc='View All'])[1]"));
