@@ -38,7 +38,7 @@ public class AqaryMobileAppTestLogin {
         URL url = new URL("http://localhost:4723");
         driver = new AndroidDriver(url, cap);
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         System.out.println("APPLICATION OPEN");
     }
@@ -100,11 +100,8 @@ public class AqaryMobileAppTestLogin {
         clickElement(By.xpath("//android.view.View[@content-desc=\"Login\"]"));
         Thread.sleep(1000);
         try {
-            // Wait for the error message to appear
-            // You may need to implement an explicit wait if necessary
             WebElement errorMessageElement = driver.findElement(By.xpath(errorMessageXPath));
             if (errorMessageElement.isDisplayed()) {
-                // If the error message is displayed, fail the test
                 Assert.fail("Login failed: Error message 'Email & Password Provide valid credentials' appeared.");
             }
         } catch (NoSuchElementException e) {
