@@ -17,8 +17,8 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class AqaryMobileAppTestLogin {
 
-    static AppiumDriver driver;
-    WebDriverWait wait;
+    protected static AppiumDriver driver;
+    protected static WebDriverWait wait;
 
     @BeforeTest
     public void openMobileApp() throws MalformedURLException {
