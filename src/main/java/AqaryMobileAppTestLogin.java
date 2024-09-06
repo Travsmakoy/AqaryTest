@@ -18,8 +18,8 @@ import org.testng.annotations.Test;
 
 public class AqaryMobileAppTestLogin {
 
-    protected static AppiumDriver driver;
-    protected static WebDriverWait wait;
+     static AppiumDriver driver;
+     WebDriverWait wait;
 
     @BeforeTest
     public void openMobileApp() throws MalformedURLException {
