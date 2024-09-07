@@ -140,7 +140,7 @@ public class AqaryMobileAppTestLogin {
 
     @org.testng.annotations.Test(priority = 11)
     public void ClickSideMenu() {
-        System.out.println("Clicking 'ShowPass' on Login");
+        System.out.println("Clicking 'SideMenu' on Login");
         boolean clicked = clickElement(By.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.ImageView[1]"));
         Assert.assertTrue(clicked, "ShowPassword element was not clickable");
     }
