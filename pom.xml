@@ -20,6 +20,7 @@
             <artifactId>java-client</artifactId>
             <version>8.6.0</version>
         </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
